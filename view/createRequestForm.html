@@ -1,18 +1,20 @@
 
 <div ng-controller="CreateRequestController">
     <form novalidate class="css-form">
-        Callibration type: <input type="text" ng-model="user.type" required/> <br/>
-        Comments: <input type="text" ng-model="user.comments"/><br />
-        Full name: <input type="text" ng-model="user.name" required /><br />
-        Phone: <input type="text" ng-model="user.phone" required /><br />
-        E-mail: <input type="email" ng-model="user.email" required /><br />
-        Gender: <input type="radio" ng-model="user.gender" value="male" />male
-        <input type="radio" ng-model="user.gender" value="female" />female<br />
-        Address: <input type="text" ng-model="user.address" required /><br />
-        City: <input type="text" ng-model="user.city" required /><br />
-        Post Code: <input type="text" ng-model="user.postcode" required /><br />
-        <input type="button" ng-click="reset()" value="Reset" />
-        <input type="submit" ng-click="update(user)" value="Save" />
+        Callibration type: <input type="text" ng-model="measurementFormData.type" required/> <br/>
+        Comments: <input type="text" ng-model="measurementFormData.comments"/><br />
+        First name: <input type="text" ng-model="measurementFormData.firstname" required /><br />
+        Middle name: <input type="text" ng-model="measurementFormData.middlename" required /><br />
+        Last name: <input type="text" ng-model="measurementFormData.lastname" required /><br />
+        Phone: <input type="text" ng-model="measurementFormData.phone" required /><br />
+        E-mail: <input type="email" ng-model="measurementFormData.email" required /><br />
+        Gender: <input type="radio" ng-model="measurementFormData.gender" value="male" />male
+        <input type="radio" ng-model="measurementFormData.gender" value="female" />female<br />
+        Address: <input type="text" ng-model="measurementFormData.address" required /><br />
+        City: <input type="text" ng-model="measurementFormData.city" required /><br />
+        Post Code: <input type="text" ng-model="measurementFormData.postcode" required /><br />
+        <input type="button" ng-click="send()" value="Send" />
+
     </form>
 </div>
 

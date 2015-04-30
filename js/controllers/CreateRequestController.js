@@ -1,13 +1,16 @@
-app.controller('CreateRequestController', ['$scope', function($scope) {
-    $scope.master = {};
+app.controller('CreateRequestController', ['$scope',  '$http', function($scope, $http ) {
 
-    $scope.update = function(user) {
-        $scope.master = angular.copy(user);
+    $scope.send = function() {
+        console.log($scope.measurementFormData);
+        var response = $http.post('/createRequest', $scope.measurementFormData);
+        console.log($scope.measurementFormData);
+        response.success(function(data, status, headers, config) {
+            $scope.codeDetail = data.code;
+            $scope.showSuccess = true;
+        });
+        response.error(function(data, status, headers, config) {
+            $scope.showError = true;
+        });
     };
 
-    $scope.reset = function() {
-        $scope.user = angular.copy($scope.master);
-    };
-
-    $scope.reset();
 }]);
